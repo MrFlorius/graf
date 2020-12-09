@@ -4,6 +4,23 @@ Visualizes Elixir project codebase as a [Hierarchichal Edge Bundling](https://ww
 
 Utilizes Mike Bostock's [example](https://observablehq.com/@d3/hierarchical-edge-bundling) implemented in D3.
 
+## Use as mix task
+### Installation
+Add to your mix.exs:
+```elixir
+defp deps() do
+  [
+    {:graf, git: "https://github.com/MrFlorius/graf.git", only: [:dev, :test], runtime: false}
+  ]
+end
+```
+then run `mix deps.get`
+### Usage
+`mix graf [--depth max_deps_depth] [--builtin]`
+Options:
+* --depth __max_deps_depth__ – sets maximum depth of recursion for dependencies (Default to 0).
+* --builtin - includes built-in elixir modules
+
 ## Quick start
 
 ```bash
